@@ -1,13 +1,67 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        int [] nums = {3,43,56,78,90,45,78,90};
+        int target= 43;
+        int ans = linearSearch(nums, target);
+        System.out.println(ans);
+        int an = linearSearch2(nums, target);
+        System.out.println(an);
+        boolean a=linearSearch3(nums, target);
+        System.out.println(a);
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+    }
+    //search the target and return true or false
+    static boolean linearSearch3(int[] arr, int target) {
+        if (arr.length == 0) {
+            return false;
+        }
+        //run a for loop
+        for (int index = 0; index < arr.length; index++) {
+            //check for element at every index
+            int element = arr[index];
+            if (element == target){
+                return true;}
+
+        }
+        //this line will execute if none of the return statements have executed
+        // hence the target not found
+        return false;
+    }
+    // search the target and return the element
+    static int linearSearch2(int[] arr, int target) {
+        if (arr.length == 0) {
+            return -1;
+        }
+        //run a for loop
+        for (int index = 0; index < arr.length; index++) {
+            //check for element at every index
+            int element = arr[index];
+            if (element == target){
+                return element;}
+
+        }
+        //this line will execute if none of the return statements have executed
+        // hence the target not found
+        return Integer.MAX_VALUE;
+    }
+
+
+    //for the return of the index
+
+    static int linearSearch(int[] arr, int target) {
+        if (arr.length == 0) {
+            return -1;
+        }
+        //run a for loop
+        for (int index = 0; index < arr.length; index++) {
+            //check for element at every index
+            int element = arr[index];
+            if (element == target){
+                return index;}
+
+        }
+        //this line will execute if none of the return statements have executed
+        // hence the target not found
+        return -1;
+    }
 }
