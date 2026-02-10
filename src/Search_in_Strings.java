@@ -3,8 +3,9 @@ public class Search_in_Strings {
     public static void main(String[] args) {
         String name="eswarreddyakkili";
         char target= 'w';
-        // System.out.println(linearSearch(name,target));
+         System.out.println(linearSearch(name,target));
         System.out.println(Arrays.toString(name.toCharArray()));
+        System.out.println(linearSearch2(name,target));
 
 
     }
