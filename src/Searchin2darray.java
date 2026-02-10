@@ -10,6 +10,8 @@ public class Searchin2darray {
         int target=34;
         int[] ans=arraysearch(arr,target);// format of return value {row,column}
         System.out.println(Arrays.toString(ans));
+        int beans =max2d(arr);
+        System.out.println(beans );
     }
     static int [] arraysearch(int[] [] arr,int target){
         if(arr.length==0){
@@ -26,6 +28,28 @@ public class Searchin2darray {
                 }
             }
         }return new int []{-1,-1};
+
+
+
+    }
+
+
+    static int  max2d(int[] [] arr){
+        int max=Integer.MIN_VALUE;
+
+
+        for (int[] ints : arr) {
+            for(int anInt : ints) {
+
+
+                if (max < anInt) {
+                    max = anInt;
+
+
+                }
+            }
+        }
+        return max;
 
 
 
